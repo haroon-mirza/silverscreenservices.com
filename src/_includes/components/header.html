@@ -22,7 +22,7 @@
           {% for entry in navPages %}
             {% set hasChild = entry.children.length %}
             
-            {% if entry.key not in ['Blog', 'Project', 'Reviews'] %}
+            {% if entry.key not in ['Blog', 'Projects', 'Reviews'] %}
               <li class="cs-li {% if hasChild %} cs-dropdown {% endif %}" {% if hasChild %} tabindex="0"{% endif %}>
                 <a href="{{ entry.url }}" class="cs-li-link {% if entry.url == page.url %} cs-active {% endif %}">
                   {{ entry.key }}
