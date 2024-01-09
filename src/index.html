@@ -1,0 +1,207 @@
+---
+title: 'Tech Support for Seniors'
+description: 'Meta description for the page'
+preloadImg: '/assets/images/landing.jpg'
+permalink: '/'
+eleventyNavigation:
+  key: Home
+  order: 100
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/local.css" />
+    <link rel="stylesheet" href="/assets/css/critical.css" />
+
+    <!-- Script for Netlify Identity -->
+    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script defer>
+        if (window.netlifyIdentity) {
+            window
+                .netlifyIdentity
+                .on('init', (user) => {
+                    if (!user) {
+                        window
+                            .netlifyIdentity
+                            .on('login', () => {
+                                document.location.href = '/admin/';
+                            });
+                    }
+                });
+        }
+    </script>
+{% endblock %}
+
+{% block body %}
+
+    <!-- ============================================ -->
+    <!--                    Hero                      -->
+    <!-- ============================================ -->
+
+    <section id="hero">
+        <div class="cs-container">
+            <div class="cs-flex-group">
+                <style>
+                    a[href^="tel"] {
+                      color: inherit; /* Inherit text color of parent element. */
+                      text-decoration: underline; /* Add underline. */
+                    }
+                    </style>
+                    <span class="cs-topper">Call now at <a href="tel:617-544-7269">(617) 544-7269</a></span>                    
+                <h1 class="cs-title">Tech Support for Seniors</h1>
+                <p class="cs-text">
+                    Tired of frustrating tech issues? Get expert assistance and peace of mind with personalized tech support specifically tailored to meet the unique needs of seniors. No more stress, just expert help and solutions.
+                </p>
+                <a href="/about" class="cs-button-solid">Explore More</a>
+                <a href="/contact" class="cs-button-transparent">
+                    <img
+                    class="cs-img"
+                    loading="lazy"
+                    decoding="async"
+                    src="https://csimg.nyc3.digitaloceanspaces.com/Hero/play.svg"
+                    alt="play icon"
+                    width="17"
+                    height="17" />
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+
+        <!-- Background Image -->
+        <picture class="cs-picture">
+            <source media="(max-width: 600px)" srcset="/assets/images/landing-m.webp">
+            <source media="(min-width: 601px)" srcset="/assets/images/landing.jpg">
+            <img aria-hidden="true" decoding="async" src="/assets/images/landing.jpg" alt="new home" width="2500" height="1667" loading="eager">
+        </picture>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                  Services                    -->
+    <!-- ============================================ -->
+
+    <section id="services" class="services">
+        <!-- Get Icons From flaticon.com -->
+        <div class="card">
+            <picture>
+                <img
+                aria-hidden="true"
+                decoding="async"
+                src="/assets/svgs/service1.svg"
+                alt="appliance"
+                width="48"
+                height="48" />
+            </picture>
+            <h2>Password Reset and Recovery</h2>
+            <p>Don't let lost or forgotten passwords keep you from accessing your accounts. Our password reset and recovery service is designed to help seniors regain access to their devices and accounts quickly and easily.</p>
+        </div>
+        <div class="card">
+            <picture>
+                <img
+                aria-hidden="true"
+                decoding="async"
+                src="/assets/svgs/service2.svg"
+                alt="appliance"
+                width="48"
+                height="48" />
+            </picture>
+            <h2>Router Installation and Configuration</h2>
+            <p>Say goodbye to slow or unreliable internet connections. Our router installation and configuration service ensures that seniors have fast and reliable internet access, so they can stay connected with family and friends.</p>
+        </div>
+        <div class="card">
+            <picture>
+                <img
+                aria-hidden="true"
+                decoding="async"
+                src="/assets/svgs/service3.svg"
+                alt="appliance"
+                width="48"
+                height="48" />
+            </picture>
+            <h2>Software and Hardware Setup and Configuration</h2>
+            <p>Software and hardware setup and configuration can be complex and time-consuming, but our expert support can help make it easy. We'll configure your devices to meet your specific needs and preferences, so you can get back to what's important.</p>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                 Side By Side                 -->
+    <!-- ============================================ -->
+
+    <section id="sbs">
+        <div class="cs-container">
+            <!-- Left Image Section -->
+            <div class="cs-left">
+                <picture class="cs-picture cs-picture1">
+                    <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="cabinets" loading="lazy" width="400" height="563">
+                </picture>
+                <picture class="cs-picture cs-picture2">
+                    <source media="(max-width: 600px)" srcset="/assets/images/construction-m.jpg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/construction.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/construction.jpg" alt="house" loading="lazy" width="400" height="563">
+                </picture>
+            </div>
+            <!-- Right Content Section-->
+            <div class="cs-right">
+                <span class="cs-topper">About Us</span>
+                <h2 class="cs-title">About Company Title</h2>
+                <p class="cs-text">
+                    We are a tech support provider with a passion for helping seniors. Our focus is on providing quality support and guidance that is tailored to the specific needs and preferences of our senior clients. We believe that tech support should be simple, straightforward, and accessible to all, and we are dedicated to providing exceptional service to seniors in need.
+                </p>
+                <p class="cs-text">
+                </p>
+                <div class="cs-flex-group">
+                    <p class="cs-flex-p">
+                        We understand the unique challenges faced by seniors in today's digital world. That's why we offer personalized tech support services that are designed to be user-friendly and focused on enhancing quality of life.                    </p>
+                    <span class="cs-name">Haroon Mirza</span>
+                    <span class="cs-job">Founder</span>
+                    <img 
+                    class="cs-quote-icon"
+                    loading="lazy"
+                    decoding="async"
+                    src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg"
+                    alt="gavel"
+                    width="136"
+                    height="77" />
+                </div>
+                <a href="/about" class="cs-button-solid">More About Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--            Extra Content To Rank             -->
+    <!-- ============================================ -->
+
+    <section id="sbs-r">
+        <div class="cs-container">
+            <!-- Left Image Section -->
+            <div class="cs-left">
+                <picture class="cs-picture cs-picture1">
+                    <source media="(max-width: 600px)" srcset="/assets/images/construction-m.jpg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/construction.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/construction.jpg" alt="house" loading="lazy" width="400" height="560">
+                </picture>
+                <picture class="cs-picture cs-picture2">
+                    <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="cabinets" loading="lazy" width="400" height="560">
+                </picture>
+            </div>
+            <!-- Right Content Section-->
+            <div class="cs-right">
+                <span class="cs-topper">Tech Support for Seniors in Massachusetts</span>
+                <h2 class="cs-title">Password Reset and Recovery Made Easy</h2>
+                <p class="cs-text">
+                    If you're a senior in Massachusetts' North Shore and need assistance with password reset or recovery, look no further. Our 24/7 tech support service is designed specifically to help seniors regain access to their accounts quickly and easily.
+                </p>
+                <p class="cs-text">
+                    With our senior-friendly approach and expert assistance, you can get back to using your devices without any hassle or frustration. Don't let password issues keep you from enjoying the benefits of technology. Contact us today for password assistance tailored to your needs.
+                </p>
+                <a href="/blog" class="cs-button-solid">Read our Blog</a>
+            </div>
+        </div>
+    </section>
+    {% include 'components/cta.html' %}
+{% endblock %}
