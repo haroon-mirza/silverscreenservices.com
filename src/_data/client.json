@@ -4,9 +4,12 @@
     "phoneForTel": "‪617-544-7269‬",
     "phoneFormatted": "‪(617) 544-7269‬",
     "address": {
+        "lineOne": "First Address Line",
+        "lineTwo": "Second Address Line",
         "city": "Peabody",
         "state": "MA",
         "zip": "01960",
+        "mapLink": "https://www.google.com/maps/place/Peabody,+MA/@42.5326366,-71.0148565,13z/data=!3m1!4b1!4m6!3m5!1s0x89e3125bb7f609f1:0xe0c86ab48e23439f!8m2!3d42.5278731!4d-70.9286609!16zL20vMHR6NHQ?entry=ttu"
     },
     "domain": "https://www.silverscreenservices.com"
 }
