@@ -1,3 +1,7 @@
+<!-- ============================================ -->
+<!--                 Navigation                   -->
+<!-- ============================================ -->
+
 <header id="cs-navigation">
   <div class="cs-container">
     <!--Nav Logo-->
@@ -19,29 +23,33 @@
       <div class="cs-ul-wrapper">
         <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
           {% set navPages = collections.all | eleventyNavigation %}
+          {# Loop through all pages with eleventyNavigation in the frontmatter #}
           {% for entry in navPages %}
+            {# Define a hasChild variable to make it easier to test what links are dropdowns#}
             {% set hasChild = entry.children.length %}
-            
-            {% if entry.key not in ['Blog', 'Projects', 'Reviews'] %}
-              <li class="cs-li {% if hasChild %} cs-dropdown {% endif %}" {% if hasChild %} tabindex="0"{% endif %}>
-                <a href="{{ entry.url }}" class="cs-li-link {% if entry.url == page.url %} cs-active {% endif %}">
-                  {{ entry.key }}
-                  {% if hasChild %}
-                    <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
-                  {% endif %}
-                </a>
 
+            {# If this page is a dropdown, give it the appropriate classes, icons, and accessibility attributes#}
+            <li class="cs-li {% if hasChild %} cs-dropdown {% endif %}" {% if hasChild %} tabindex="0"{% endif %}>
+
+              {# Similarly, if the link is active, apply the necessary classes #}
+              <a href="{{ entry.url }}" class="cs-li-link {% if entry.url == page.url %} cs-active {% endif %}">
+                {{ entry.key }}
                 {% if hasChild %}
-                  <ul class="cs-drop-ul">
-                    {% for child in entry.children %}
-                      <li class="cs-drop-li">
-                        <a href="{{ child.url }}" class="cs-li-link cs-drop-link">{{ child.key }}</a>
-                      </li>
-                    {% endfor %}
-                  </ul>
+                  <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
                 {% endif %}
-              </li>
-            {% endif %}
+              </a>
+
+              {# Dropdowns have another ul/li set up within the parent li. Render in the same way as a normal link #}
+              {% if hasChild %}
+                <ul class="cs-drop-ul">
+                  {% for child in entry.children %}
+                    <li class="cs-drop-li">
+                      <a href="{{ child.url }}" class="cs-li-link cs-drop-link">{{ child.key }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
           {% endfor %}
         </ul>
       </div>
